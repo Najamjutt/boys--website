@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madina Tailor - Premium Stitching & Stylish Suit Designs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e8cc80;
+            --dark: #0f0f0f;
+            --dark2: #1a1a1a;
+            --dark3: #252525;
+            --cream: #f5f0e8;
+            --white: #ffffff;
+            --text-muted: #999;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            padding: 1.1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold) !important;
+            letter-spacing: 1px;
+        }
+
+        .navbar-brand span {
+            color: var(--white);
+        }
+
+        .nav-link {
+            color: #ccc !important;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            margin: 0 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--gold);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(201,168,76,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--dark);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            /* Stylish South Asian man in formal suit/sherwani - elegant posed */
+            background: url('./img/download.jpg') center/cover no-repeat;
+            filter: brightness(0.5);
+            transform: scale(1);
+            animation: slowzoom 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowzoom {
+            from {
+                transform: scale(1.05);
+            }
+
+            to {
+                transform: scale(1.12);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(0, 0, 0, 0.7) 0%, rgba(201, 168, 76, 0.08) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            color: var(--dark);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 8px 24px;
+            border-radius: 2px;
+            margin-bottom: 28px;
+            animation: fadeInUp 0.8s ease both;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 800;
+            line-height: 1.05;
+            animation: fadeInUp 0.9s ease 0.15s both;
+        }
+
+        .hero h1 .gold {
+            color: var(--gold);
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #bbb;
+            max-width: 480px;
+            margin: 22px 0 40px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px 0;
+            animation: fadeInUp 1s ease 0.25s both;
+        }
+
+        .btn-gold {
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 16px 44px;
+            border: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.45s both;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.35);
+            color: var(--dark);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 15px 44px;
+            border: 1px solid var(--gold);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 16px;
+            animation: fadeInUp 1s ease 0.55s both;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease 0.65s both;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .section-line {
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            margin: 18px auto 0;
+        }
+
+        /* ── MEN'S SUITS GALLERY ── */
+        .mens-section {
+            padding: 110px 0;
+            background: var(--dark2);
+        }
+
+        .suit-card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 480px;
+            cursor: pointer;
+            background: var(--dark3);
+        }
+
+        .suit-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.6s ease, filter 0.4s ease;
+            filter: brightness(0.85);
+        }
+
+        .suit-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.55);
+        }
+
+        .suit-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 55%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+
+        .suit-card-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .suit-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .suit-card p {
+            font-size: 0.85rem;
+            color: #bbb;
+            margin: 0;
+        }
+
+        .suit-card-hover {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .suit-card:hover .suit-card-hover {
+            opacity: 1;
+        }
+
+        .hover-icon {
+            width: 64px;
+            height: 64px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.4rem;
+        }
+
+        /* ── LADIES GALLERY ── */
+        .ladies-section {
+            padding: 110px 0;
+            background: var(--dark);
+        }
+
+        .ladies-card {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 420px;
+            cursor: pointer;
+        }
+
+        .ladies-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .ladies-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .ladies-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+        }
+
+        .ladies-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ladies-card p {
+            font-size: 0.82rem;
+            color: #bbb;
+            margin: 0;
+        }
+
+        /* ── SERVICES ── */
+        .services-section {
+            padding: 110px 0;
+            background: var(--dark3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.07) 0%, transparent 70%);
+        }
+
+        .service-item {
+            padding: 48px 36px;
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.35s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .service-item:hover {
+            border-color: rgba(201, 168, 76, 0.4);
+            transform: translateY(-8px);
+            background: rgba(201, 168, 76, 0.04);
+        }
+
+        .service-item:hover::after {
+            width: 100%;
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-icon {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        .service-item h5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .service-item p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonial-section {
+            padding: 110px 0;
+            background: var(--dark2);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            border-radius: 4px;
+            padding: 40px;
+            height: 100%;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-card p {
+            font-size: 0.92rem;
+            color: #ccc;
+            line-height: 1.85;
+            font-style: italic;
+            margin-bottom: 28px;
+        }
+
+        .reviewer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .reviewer-title {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            padding: 110px 0;
+            background: var(--dark);
+        }
+
+        .contact-info-block {
+            padding: 10px 0 30px;
+        }
+
+        .contact-info-block h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact-info-block p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.92rem;
+            margin-bottom: 36px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .contact-detail-icon {
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            border-radius: 4px;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .contact-detail-text label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .contact-detail-text span {
+            font-size: 0.92rem;
+            color: #ccc;
+        }
+
+        .contact-form-box {
+            background: var(--dark3);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 4px;
+            padding: 50px 44px;
+        }
+
+        .contact-form-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--gold);
+        }
+
+        .form-floating label {
+            color: #888;
+            font-size: 0.88rem;
+        }
+
+        .form-ctrl {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            padding: 15px 18px;
+            color: var(--white);
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+            margin-bottom: 18px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .form-ctrl::placeholder {
+            color: #666;
+        }
+
+        .form-ctrl:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: rgba(201, 168, 76, 0.04);
+        }
+
+        textarea.form-ctrl {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        select.form-ctrl option {
+            background: var(--dark3);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: #080808;
+            border-top: 1px solid rgba(201, 168, 76, 0.12);
+            padding: 70px 0 30px;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .footer p,
+        .footer a {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--gold);
+        }
+
+        .footer h6 {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(201, 168, 76, 0.08);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 50px;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.82rem;
+        }
+
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 58px;
+            height: 58px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.6rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            text-decoration: none;
+            animation: whatsapp-pulse 2.5s ease infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.45);
+            }
+
+            50% {
+                box-shadow: 0 8px 50px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .btn-outline-gold {
+                margin-left: 0;
+                margin-top: 14px;
+            }
+
+            .contact-form-box {
+                padding: 36px 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/923410507972" class="whatsapp-fab" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ── NAVBAR ── -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-scissors me-2" style="font-size:1.3rem;"></i>
+                Madina <span>Tailor</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mens">Men's Suits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ladies">Ladies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#contact" class="btn-gold" style="padding:10px 28px;font-size:0.75rem;">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-badge">⭐ Special Project &nbsp;|&nbsp; Sahiwal, Punjab</div>
+                    <h1>Madina<br><span class="gold">Tailor</span></h1>
+                    <div class="hero-divider"></div>
+                    <p class="hero-sub">Premium stitching &amp; custom tailoring for men and women. Perfect fit,
+                        impeccable craft, timeless elegance.</p>
+                    <div>
+                        <a href="#mens" class="btn-gold">View Men's Designs</a>
+                        <a href="#contact" class="btn-outline-gold">Book Appointment</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-num">12+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">5K+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">100%</div>
+                            <div class="stat-label">Perfect Fit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MEN'S SUITS ── -->
+    <section id="mens" class="mens-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Collection</span>
+                <h2 class="section-title text-white">Men's Suit Designs</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 – Classic Sherwani -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- Gold embroidered sherwani groom -->
+                        <img src="./img/shadi outfit.jpg"
+                            alt="Classic Sherwani">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Bridal</span>
+                            <h4>Classic Sherwani</h4>
+                            <p>Rich embroidery &amp; zardozi work</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 – Designer Kurta Pajama -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- Man in traditional kurta shalwar -->
+                        <img src="./img/p3.jpg"
+                            alt="Designer Kurta Pajama">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Casual</span>
+                            <h4>Designer Kurta Pajama</h4>
+                            <p>Linen &amp; cotton premium fabrics</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 – Formal Suit -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- South Asian man in sharp formal blazer suit -->
+                        <img src="./img/p1.jpg"
+                            alt="Premium Formal Suit">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Formal</span>
+                            <h4>Premium Formal Suit</h4>
+                            <p>Tailored blazer with trousers</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 – Waistcoat Suit -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- Man in waistcoat three-piece suit -->
+                        <img src="./img/feeroz.jpg"
+                            alt="Waistcoat Suit Set">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Party Wear</span>
+                            <h4>Waistcoat Suit Set</h4>
+                            <p>Three-piece premium stitching</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 – Business Look -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- Confident man in business suit -->
+                        <img src="./img/D (2).jpg"
+                            alt="Executive Business Look">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Business</span>
+                            <h4>Executive Business Look</h4>
+                            <p>Sharp &amp; modern cut tailoring</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 – Shalwar Kameez -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="suit-card">
+                        <!-- Traditional Pakistani shalwar kameez -->
+                        <img src="./img/shalwar.jpg"
+                            alt="Shalwar Kameez">
+                        <div class="suit-card-overlay">
+                            <span class="suit-card-tag">Traditional</span>
+                            <h4>Shalwar Kameez</h4>
+                            <p>Pakistani traditional style stitching</p>
+                        </div>
+                        <div class="suit-card-hover">
+                            <div class="hover-icon"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── LADIES SECTION ── -->
+    <section id="ladies" class="ladies-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Ladies Collection</span>
+                <h2 class="section-title text-white">Stylish Ladies Designs</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="./img/women.jpg"
+                            alt="Embroidered Anarkali">
+                        <div class="ladies-card-overlay">
+                            <h4>Embroidered Anarkali</h4>
+                            <p>Heavy embroidery with stone work</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="img/bridal lehenga.jpg"
+                            alt="Lehenga Choli">
+                        <div class="ladies-card-overlay">
+                            <h4>Bridal Lehenga Choli</h4>
+                            <p>Zari &amp; gotta patti work</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="img/suit.jpg"
+                            alt="Salwar Kameez">
+                        <div class="ladies-card-overlay">
+                            <h4>Salwar Kameez</h4>
+                            <p>Printed dupatta with embroidery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="img/sharara.jpg"
+                            alt="Sharara Set">
+                        <div class="ladies-card-overlay">
+                            <h4>Sharara Set</h4>
+                            <p>Modern design with sequence work</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="img/Gown.jpg"
+                            alt="Gown Design">
+                        <div class="ladies-card-overlay">
+                            <h4>Party Gown Design</h4>
+                            <p>Elegant party wear stitching</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ladies-card">
+                        <img src="img/Sarrr.jpg"
+                            alt="Saree Blouse">
+                        <div class="ladies-card-overlay">
+                            <h4>Designer Saree </h4>
+                            <p>Custom blouse stitching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SERVICES ── -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title text-white">Premium Services</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-scissors"></i></div>
+                        <h5>Custom Stitching</h5>
+                        <p>Perfect fit for every body type. We take precise measurements and craft garments that feel
+                            like a second skin.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-palette"></i></div>
+                        <h5>Designer Embroidery</h5>
+                        <p>Handcrafted embroidery, zari work, and stone settings by expert artisans with 12+ years of
+                            experience.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <h5>Perfect Measurements</h5>
+                        <p>Precise body measurements using professional tools ensuring flawless, comfortable fitting
+                            every time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-gem"></i></div>
+                        <h5>Bridal Collection</h5>
+                        <p>Special bridal and dulha packages with premium fabrics, embroidery, and finishing for your
+                            big day.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h5>Alterations & Repairs</h5>
+                        <p>Professional alterations to resize, reshape, and restore your favourite garments back to
+                            perfection.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                        <h5>Uniforms & Bulk Orders</h5>
+                        <p>School uniforms, corporate dress code, and bulk orders at competitive prices with fast
+                            turnaround.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── TESTIMONIALS ── -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Client Reviews</span>
+                <h2 class="section-title text-white">What Our Clients Say</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"The sherwani they stitched for my wedding was absolutely stunning. Perfect fit and beautiful
+                            embroidery. Highly recommend Madina Tailor to everyone in Paliwala!"</p>
+                        <div class="reviewer-name">Ahmad Raza</div>
+                        <div class="reviewer-title">Wedding Client · Faisalabad</div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"Got my office suits stitched here and the quality is outstanding. They understood exactly
+                            what I wanted and delivered beyond expectations. Will come back again!"</p>
+                        <div class="reviewer-name">Muhammad Usman</div>
+                        <div class="reviewer-title">Regular Client · Faisalabad</div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"My bridal lehenga was a dream come true. The embroidery detail and finishing was perfect.
+                            The ladies section team is very skilled and professional. Thank you!"</p>
+                        <div class="reviewer-name">Fatima Bibi</div>
+                        <div class="reviewer-title">Bridal Client · Sahiwal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <!-- Info -->
+                <div class="col-lg-5">
+                    <div class="contact-info-block">
+                        <span class="section-label d-block mb-3">Get In Touch</span>
+                        <h3>Book Your Appointment</h3>
+                        <p>Visit us at our shop in Paliwala or send us a message. We'll get back to you within 24 hours
+                            to discuss your requirements.</p>
+
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-detail-text">
+                                <label>Location</label>
+                                <span>Main Bazar, Near Jama Masjid, Paliwala, Tandliawala, Punjab, Pakistan</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                            <div class="contact-detail-text">
+                                <label>Phone / WhatsApp</label>
+                                <span>+92 318 182 4291</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-detail-text">
+                                <label>Working Hours</label>
+                                <span>Mon – Sat: 9:00 AM – 9:00 PM<br>Sunday: 12:00 PM – 6:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-detail-text">
+                                <label>Email</label>
+                                <span>madinatailor@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-box">
+                        <h4>Send Your Enquiry</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-ctrl" placeholder="Your Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-ctrl" placeholder="Phone / WhatsApp Number">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-ctrl" placeholder="Email Address (optional)">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-ctrl">
+                                    <option value="" disabled selected>Select Service</option>
+                                    <option>Men's Custom Stitching</option>
+                                    <option>Ladies Custom Stitching</option>
+                                    <option>Bridal / Dulha Package</option>
+                                    <option>Designer Embroidery</option>
+                                    <option>Alterations & Repairs</option>
+                                    <option>Uniform / Bulk Order</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-ctrl"
+                                    placeholder="Describe your design requirements..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn-gold" style="width:100%;text-align:center;cursor:pointer;"
+                                    onclick="handleSubmit(event)">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Enquiry
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <span class="footer-brand"><i class="fas fa-scissors me-2"></i>Madina Tailor</span>
+                    <p>Premium stitching services with stylish designs for men and women in Paliwala, Punjab. Your
+                        satisfaction is our priority for over 12 years.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#mens">Men's Suits</a></li>
+                        <li><a href="#ladies">Ladies</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6>Our Services</h6>
+                    <ul>
+                        <li><a href="#">Custom Stitching</a></li>
+                        <li><a href="#">Designer Embroidery</a></li>
+                        <li><a href="#">Bridal Packages</a></li>
+                        <li><a href="#">Alterations</a></li>
+                        <li><a href="#">Bulk / Uniform Orders</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6>Contact Info</h6>
+                    <ul>
+                        <li><a href="#">📍 Main Bazar, PALIWALA</a></li>
+                        <li><a href="tel:+923181824291">📞 +92 318 182 4291</a></li>
+                        <li><a href="mailto:madinatailor@gmail.com">✉️ madinatailor@gmail.com</a></li>
+                        <li><a href="#">🕐 Mon–Sat: 9AM – 9PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Madina Tailor. All rights reserved.</p>
+                <p>Made with <span style="color:var(--gold)">♥</span> in Punjab, Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target;
+            btn.innerHTML = '<i class="fas fa-check me-2"></i>Enquiry Sent!';
+            btn.style.background = 'linear-gradient(90deg,#2ecc71,#27ae60)';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Enquiry';
+                btn.style.background = '';
+            }, 3000);
+        }
+
+        // Intersection observer for fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = '1';
+                    e.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.suit-card, .ladies-card, .service-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
